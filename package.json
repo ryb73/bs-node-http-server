@@ -1,0 +1,28 @@
+{
+  "name": "bs-node-http-server",
+  "version": "1.0.0",
+  "description": "Bucklescript bindings for http-server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "eval $(dependencyEnv) && nopam && bsb 2>&1 | berror.native --path-to-refmttype $(which refmttype)",
+    "watch": "eval $(dependencyEnv) && nopam && bsb -make-world -w 2>&1 | berror.native --path-to-refmttype $(which refmttype)",
+    "clean": "bsb -clean-world"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryb73/bs-node-http-server.git"
+  },
+  "author": "Ryan Biwer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryb73/bs-node-http-server/issues"
+  },
+  "homepage": "https://github.com/ryb73/bs-node-http-server#readme",
+  "devDependencies": {
+    "bs-platform": "1.7.1",
+    "dependency-env": "*",
+    "nopam": "*",
+    "ocamlBetterErrors": "*"
+  }
+}

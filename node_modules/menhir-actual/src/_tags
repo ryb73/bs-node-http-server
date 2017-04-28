@@ -1,0 +1,21 @@
+
+# Menhir needs the Unix library.
+<menhir.{byte,native}>: use_unix
+
+# checkOCamlVersion needs the Str library.
+<checkOCamlVersion.byte>: use_str
+
+# Build and link with -g.
+<**/*.{cmo,cmx}>:debug
+<**/*.byte>:debug
+<**/*.native>:debug
+
+# Turn off assertions in some modules, where they are useful when debugging, but costly.
+<LRijkstra.*>: noassert
+
+# Declare that our temporary build directories should not be traversed.
+# This is required by ocamlbuild 4.03; it will otherwise complain that
+# these build directories violate its hygiene rules.
+<_build>: -traverse
+<_stage*>: -traverse
+
