@@ -1,7 +1,8 @@
 type options = [%bs.obj:
     {.
         root: string,
-        cache: option int
+        cache: Js.undefined int
+        /*logFn: Js.undefined (string => string => option string => unit)*/
     }
 ];
 
